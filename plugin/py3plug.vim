@@ -8,11 +8,12 @@
 " every time Vim starts.
 " So you should avoid writing code unnecessarily like below:
 " : echo 'foo'
-" => 'echo' will be printed each Vim start-up.
+" => 'foo' will be printed each Vim startup.
 " : let tmp = 'foo'
-" => The variable 'tmp' will be valid in each Vim session.
+" => The variable 'tmp' will be referred to
+"    by Vim users and by other Vim scripts.
 " : call SomeHeavyFunction()
-" => This will cause slow vim statup.
+" => This will cause slow vim startup.
 "    You should move as much as functionality
 "    into scripts under 'autoload' directory.
 "    Scripts under 'autoload' directory aren't loaded

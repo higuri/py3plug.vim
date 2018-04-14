@@ -10,7 +10,7 @@
 " : $(nmae_of_this_file)#function_name
 "
 " Once this file is loaded,
-" every global function and variable defined here is referable
+" every global function and variable defined here can be referred to
 " by Vim users or by other Vim scripts.
 " So you should give plugin-specific names to them
 " to avoid duplication of other names.
