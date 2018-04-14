@@ -3,6 +3,23 @@
 "   Vim Plugin +python3 Template
 "
 
+"
+" This file or every file under '(.vim/)plugin/' will be run
+" every time Vim starts.
+" So you should avoid writing code unnecessarily like below:
+" : echo 'foo'
+" => 'echo' will be printed each Vim start-up.
+" : let tmp = 'foo'
+" => The variable 'tmp' will be valid in each Vim session.
+" : call SomeHeavyFunction()
+" => This will cause slow vim statup.
+"    You should move as much as functionality
+"    into scripts under 'autoload' directory.
+"    Scripts under 'autoload' directory aren't loaded
+"    until they are actually needed (referred).
+"
+
+" Check +python3.
 " You can check whether your vim supports python3 in various ways:
 " > $vim --version | grep 'python3'  @ shell
 " > :python3 print(1)                @ vim cmdline
@@ -12,7 +29,8 @@ if !has('python3')
     finish
 endif
 
-" This flag is conventionally
+" Avoid duplicate loading.
+" The flag is conventionally
 " named like 'loaded_$(pluginname)'.
 if exists('g:loaded_py3plug')
     finish
