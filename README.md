@@ -18,8 +18,8 @@ You can check by
 ### Traditional Way
 
     $ git clone https://github.com/higuri/py3plug.vim
-    $ cp -r py3plug/plugin ~/.vim/.
-    $ cp -r py3plug/autoload ~/.vim/.
+    $ cp -r py3plug.vim/plugin ~/.vim/.
+    $ cp -r py3plug.vim/autoload ~/.vim/.
 
 ### Vundle
 
