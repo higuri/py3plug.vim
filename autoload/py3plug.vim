@@ -21,6 +21,7 @@
 let s:curdir = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 let s:pyfile = s:curdir . '/py3plug.py'
 
+python3 import vim
 execute 'py3file ' . s:pyfile
 
 function! py3plug#func0()
@@ -28,11 +29,9 @@ function! py3plug#func0()
 endfunction
 
 function! py3plug#func1(arg)
-    python3 import vim
     python3 py3plug_func1(vim.eval('a:arg'))
 endfunction
 
 function! py3plug#funcX(...)
-    python3 import vim
     python3 py3plug_funcX(vim.eval('a:000'))
 endfunction
