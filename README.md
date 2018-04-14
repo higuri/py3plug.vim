@@ -14,6 +14,13 @@ You can check by
 
     $ vim --version | grep +python3
 
+
+### Traditional Way
+
+    $ git clone https://github.com/higuri/py3plug.vim
+    $ cp -r py3plug/plugin ~/.vim/.
+    $ cp -r py3plug/autoload ~/.vim/.
+
 ### Vundle
 
 If you have Vundle installed, add the following line to your .vimrc
