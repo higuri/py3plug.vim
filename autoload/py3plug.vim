@@ -14,24 +14,34 @@
 " by Vim users or by other Vim scripts.
 " So you should give plugin-specific names to them
 " to avoid duplication of other names.
-" The same goes for global definition in Python scripts.
+" The same goes for global definition in Python.
+" So we use Python's import notation
+" instead of using Vim's py3file command
+" in order to reduce the number of global definitions (var, func, class).
 "
 
-" Run ./py3plug.py to load python functions.
-let s:curdir = fnamemodify(resolve(expand('<sfile>:p')), ':h')
-let s:pyfile = s:curdir . '/py3plug.py'
-
-python3 import vim
-execute 'py3file ' . s:pyfile
+" Import python/py3plug.py
+python3 << endpython
+import os
+import sys
+import vim
+# <sfile>: Special variable whichi means current Vim script file.
+sys.path.append(os.path.join(
+    (os.path.dirname(vim.eval('expand("<sfile>")'))),
+    'python'))
+import py3plug
+# Cleanup.
+sys.path.pop()
+endpython
 
 function! py3plug#func0()
-    python3 py3plug_func0()
+    python3 py3plug.func0()
 endfunction
 
 function! py3plug#func1(arg)
-    python3 py3plug_func1(vim.eval('a:arg'))
+    python3 py3plug.func1(vim.eval('a:arg'))
 endfunction
 
 function! py3plug#funcX(...)
-    python3 py3plug_funcX(vim.eval('a:000'))
+    python3 py3plug.funcX(vim.eval('a:000'))
 endfunction

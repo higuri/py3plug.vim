@@ -4,11 +4,11 @@
 # See ':help python-vim' for details.
 #import vim
 
-def py3plug_func0():
+def func0():
     print('py3plug_func0')
 
-def py3plug_func1(arg):
+def func1(arg):
     print('py3plug_func1(%r)' % arg)
 
-def py3plug_funcX(args):
+def funcX(args):
     print('py3plug_funcX(%r)' % args)
