@@ -20,6 +20,13 @@
 "    until they are actually needed (referred).
 "
 
+" Avoid duplicate loading.
+" The flag is conventionally
+" named like 'loaded_$(pluginname)'.
+if exists('g:loaded_py3plug')
+    finish
+endif
+
 " Check +python3.
 " You can check whether your vim supports python3 in various ways:
 " > $vim --version | grep 'python3'  @ shell
@@ -30,12 +37,6 @@ if !has('python3')
     finish
 endif
 
-" Avoid duplicate loading.
-" The flag is conventionally
-" named like 'loaded_$(pluginname)'.
-if exists('g:loaded_py3plug')
-    finish
-endif
 let g:loaded_py3plug = 1
 
 " Save vi-compatible option and reset it to its VIM default value.
