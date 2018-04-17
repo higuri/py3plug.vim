@@ -29,7 +29,8 @@ import vim
 sys.path.append(os.path.join(
     (os.path.dirname(vim.eval('expand("<sfile>")'))),
     'python'))
-import py3plug
+from py3plug import Py3Plug
+py3plug = Py3Plug()
 # Cleanup.
 sys.path.pop()
 endpython
